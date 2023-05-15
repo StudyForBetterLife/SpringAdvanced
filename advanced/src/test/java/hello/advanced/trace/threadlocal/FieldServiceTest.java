@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 @Slf4j
 public class FieldServiceTest {
 
-    private FieldService fieldService = new FieldService();
+    private final FieldService fieldService = new FieldService();
 
     /**
      * thread-A가 설정한 값이 thread-B에 의해 덮혀씌워진다.
