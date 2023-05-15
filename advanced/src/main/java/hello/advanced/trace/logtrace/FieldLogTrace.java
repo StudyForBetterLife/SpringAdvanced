@@ -15,6 +15,9 @@ public class FieldLogTrace implements LogTrace {
      * traceIdHolder 필드를 사용해서 TraceId를 동기화시키므로
      * HelloTraceV2 처럼 TraceId 를 파라미터로 전달하지 않아도 되고, 애플리케이션의 메서드 파라미터도
      * 변경하지 않아도 된다.
+     * <p>
+     * 싱글톤으로 등록된 FieldLogTrace 인스턴스에 여러 쓰레드가 동시에 접근할 수 있어 동시성 문제가 발생한다.
+     * 1초안에 여러번 api를 호출하면, transactionId가 덮혀씌워진다. (thread id는 다르지만, transactionId가 동일한 로그를 볼 수 있음)
      */
     private TraceId traceIdHolder; //traceId 동기화, 동시성 이슈 발생
 
