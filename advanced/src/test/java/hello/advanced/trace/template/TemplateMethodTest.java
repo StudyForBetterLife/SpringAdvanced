@@ -70,7 +70,7 @@ public class TemplateMethodTest {
                 log.info("비즈니스 로직1 실행");
             }
         };
-        log.info("클래스 이름1={}", template1.getClass());
+        log.info("클래스 이름1={}", template1.getClass()); // TemplateMethodTest$1
         template1.execute();
 
         AbstractTemplate template2 = new AbstractTemplate() {
@@ -79,7 +79,7 @@ public class TemplateMethodTest {
                 log.info("비즈니스 로직2 실행");
             }
         };
-        log.info("클래스 이름2={}", template2.getClass());
+        log.info("클래스 이름2={}", template2.getClass()); // TemplateMethodTest$2
         template2.execute();
     }
 }
